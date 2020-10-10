@@ -79,14 +79,41 @@ public class JavaPractice1 {
                 }
             }
         }
-        System.out.print(Arrays.toString(array));
+        System.out.println(Arrays.toString(array));
+    }
+
+    /*
+     * Задание 5
+     */
+    static void increaseNumber(String input) {
+        char[] text;
+        String number = "";
+        String word = "";
+        String result_string;
+        int increase;
+
+        text = input.toCharArray();
+
+        for (int i = 0; i < text.length; i++) {
+            if (Character.isLetter(text[i])) {
+                word += text[i];
+            }
+            else {
+                number += text[i];
+            }
+        }
+        increase = Integer.valueOf(number) + 1;
+        result_string = word + increase;
+        System.out.println("Increase task: " + result_string);
     }
 
     public static void main(String[] args) {
-        double average = calculateAverage(3.4,10.5);
+        double average = calculateAverage(3,4);
+        System.out.println("Average: " + average);
         FLName myName = new FLName("Alex","Mesch");
         System.out.println("Full name: " + myName.getFirstName() + " " + myName.getLastName());
         fib(15);
         sortArray(randomizeArray(10));
+        increaseNumber("abc123");
     }
 }
